@@ -3,8 +3,7 @@
 Each implementation should contain following elements:
 
 - MVVM architecture
-- Androidx Lifecycle
-- Jetpack Navigation Component
+- Jetpack Compose for UI
 - Single Activity pattern
 - Repository pattern
 - Material design components
