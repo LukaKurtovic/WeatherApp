@@ -1,6 +1,7 @@
 package hr.dice.luka_kurtovic.weatherapp.remote.model
 
 import android.icu.text.DateFormat
+import com.google.android.gms.common.util.VisibleForTesting
 import kotlinx.serialization.SerialName
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
@@ -51,7 +52,8 @@ data class DailyWeatherDetails(
         get() = "https://raw.githubusercontent.com/visualcrossing/WeatherIcons/main/PNG/2nd%20Set%20-%20Color/$icon.png"
 }
 
-private fun toUpperCase(text: String): String {
+@VisibleForTesting
+fun toUpperCase(text: String): String {
     return text.replaceFirstChar {
         if (it.isLowerCase()) it.titlecase(
             Locale.ROOT

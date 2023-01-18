@@ -2,6 +2,7 @@ package hr.dice.luka_kurtovic.weatherapp.ui.current_weather
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.google.android.gms.common.util.VisibleForTesting
 import hr.dice.luka_kurtovic.weatherapp.data.LocationRepository
 import hr.dice.luka_kurtovic.weatherapp.data.SettingsRepository
 import hr.dice.luka_kurtovic.weatherapp.data.WeatherRepository
@@ -78,7 +79,8 @@ class CurrentWeatherViewModel(
         }
     }
 
-    private fun updateUiState(response: Resource, location: Location) {
+    @VisibleForTesting
+    fun updateUiState(response: Resource, location: Location) {
         when (response) {
             is Resource.Success<*> -> {
                 val data = response.data as CurrentWeatherInfo
